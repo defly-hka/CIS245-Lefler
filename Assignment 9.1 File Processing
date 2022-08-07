@@ -1,0 +1,45 @@
+#David Lefler
+#CIS 245
+#August 7, 2022
+
+#import logging and os information for python to later recognize
+#configuring logging with empty filename for user input to overwrite later
+#logging level INFO so logged information won't be classified under default level WARNING
+#format pathname so path is submitted (pulled from:
+#https://docs.python.org/3/library/logging.html#logrecord-attributes) 
+
+import logging
+import os
+logging.basicConfig(filename = '',
+                    level = logging.INFO,
+                   format = %(pathname)s
+#take user input to determine the name of the directory, and the name the user assigns to their specific file
+directory = input("Which folder would you like to modify? ")
+filename = input("\nWhat is the name of your file?")
+#create a variable that includes both user inputs and opens the file path using .pathname so the information is communicated to the system
+#access mode 'w' is for creating/writing files
+file_Path = (f'{directory}/{filename}').pathname
+open('file_Path', 'w')
+
+
+#checking if the provided directory exists or not 
+#while loop if the directory could not be found
+os.file_path.exists(directory)
+for directory in os.path.exists:
+  while directory == False:
+    print("Sorry, the folder you chose could not be found. Please try again.")
+    continue
+  else:
+    break
+
+#requesting the user info and assigning all user info to one variable to meet comma seperated line requirement
+name = input("\nWhat is your name? ")
+phone = input("\n Please enter your 9 digit phone number: ")
+address = input("\nPlease enter your address: ")
+UserInfo = f'{name}, {phone}, {address}'
+
+
+#logging function used to both designate UserInfo correctly and to print readable version back to the user
+#once logged, writing the string to the file that has been created
+logging.info(UserInfo)
+file_Path.write(UserInfo)
